@@ -1,0 +1,9 @@
+.gradient-admin {
+    /* fallback for old browsers */
+    background: black;
+
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: rgb(235, 241, 255);
+    background: linear-gradient(90deg, rgba(235, 241, 255, 1) 0%, rgba(168, 168, 168, 1) 100%);
+
+}

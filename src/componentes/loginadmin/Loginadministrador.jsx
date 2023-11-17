@@ -1,8 +1,10 @@
 import React from 'react';
 import './loginadmin.css';
 import { useForm } from 'react-hook-form';
+import { useNavigate,Link } from 'react-router-dom';
 
 const Loginadministrador = () => {
+    const navegacion = useNavigate();
     const { register, handleSubmit, formState: { errors } } = useForm();
     return (
         <section className=" vh-100 gradient-custom">
@@ -31,8 +33,9 @@ const Loginadministrador = () => {
                                         <input type="password" id="typePasswordX" className="form-control form-control-lg" />
                                         <label className="form-label" for="typePasswordX">Contraseña</label>
                                     </div>
+                                    <Link to="/admin">
                                     <button className="btn btn-outline-light btn-lg px-5" type="submit">Iniciar Sesion</button>
-
+                                    </Link>
 
                                 </div>
 
