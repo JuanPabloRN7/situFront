@@ -27,7 +27,7 @@ jobs:
     - name: Run SonarQube analysis
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        #SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
       run: |
         npx sonar-scanner \
           -Dsonar.projectKey=juanpablorn7 \
