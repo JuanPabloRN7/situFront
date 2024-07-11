@@ -6,31 +6,31 @@ jobs:
   sonar:
     runs-on: ubuntu-latest
 
-
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
 
-
     - name: Set up Java
       uses: actions/setup-java@v2
       with:
+        distribution: 'adopt'  
         java-version: '11'
-
 
     - name: Install Node.js
       uses: actions/setup-node@v2
       with:
         node-version: '14'
 
-
     - name: Install dependencies
       run: npm install
 
-
-    - name: SonarQube Scan
+    - name: Run SonarQube analysis
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       run: |
-        sonar-scanner
-
+        npx sonar-scanner \
+          -Dsonar.projectKey=my_project_key \
+          -Dsonar.organization=my_organization \
+          -Dsonar.sources=. \
+          -Dsonar.host.url=https://sonarqube.myorganization.com \
+          -Dsonar.login=${{ secrets.SONAR_TOKEN }}
