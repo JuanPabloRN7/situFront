@@ -1,0 +1,38 @@
+name: SonarQube Scan
+
+on: [push, pull_request]
+
+jobs:
+  sonar:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Java
+      uses: actions/setup-java@v2
+      with:
+        distribution: 'adopt'  
+        java-version: '11'
+
+    - name: Install Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Run SonarQube analysis
+      env:
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+      run: |
+        npx sonar-scanner \
+          -Dsonar.projectKey=juanpablorn7 \
+          -Dsonar.organization=JuanPabloRN7 \
+          -Dsonar.sources=. \
+          -Dsonar.host.url=https://sonarcloud.io \
+          -Dsonar.login=${{ 865065fae363d5a51f5925c33fadee7327d14ebc }}
+        curl -X POST -H 'Content-type: application/json' --data '{"text":"Hello, World!"}' https://hooks.slack.com/services/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
