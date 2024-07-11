@@ -29,8 +29,8 @@ jobs:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       run: |
         npx sonar-scanner \
-          -Dsonar.projectKey=my_project_key \
-          -Dsonar.organization=my_organization \
+          -Dsonar.projectKey=juanpablorn7 \
+          -Dsonar.organization=JuanPabloRN7 \
           -Dsonar.sources=. \
-          -Dsonar.host.url=https://sonarqube.myorganization.com \
-          -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+          -Dsonar.host.url=https://sonarcloud.io \
+          -Dsonar.login=${{ 865065fae363d5a51f5925c33fadee7327d14ebc }}
