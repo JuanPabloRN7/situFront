@@ -6,9 +6,8 @@ import './adminvista.css';
 const Admivista = () => {
     return (
         <div className='gradient-admin'>
-            <Nanvar></Nanvar>
-            <div className='mt-3' style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}>
-                <h1><b>Administración</b></h1>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}>
+                <h1 className='mt-3'><b>Administración</b></h1>
             </div>
             <div style={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}>
                 <img

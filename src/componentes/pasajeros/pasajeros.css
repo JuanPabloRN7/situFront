@@ -1,5 +1,4 @@
-.gradient-custom {
+.todo {
     background: rgb(235, 241, 255);
     background: linear-gradient(90deg, rgba(235, 241, 255, 1) 0%, rgba(174, 195, 233, 1) 100%);
-
 }
